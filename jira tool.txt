@@ -1,0 +1,11 @@
+    ** Ticketing tool JIRA :
+ self prepared on that jira tool differant topic here
+
+1} all theory related this topic -
+ refrance:- you tube & javatpoint website
+2} how to create Backlog, inside this backlog to create versions, epic.story,task etc.
+3} how to create issue & its differant type 
+4}  to create sprint
+5} all pcl on that jira software using differant issue
+6} creating differant chart 
+7} zepayer tool download and some work are carryout on that new this
