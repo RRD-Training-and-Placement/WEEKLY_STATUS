@@ -1,0 +1,130 @@
+  * SHUBHAM DHAKTODE ---(Assignment no .1)
+-------------------------------------------------------------------
+
+1) write the command to display 10 th line of a /etc/passwd file ?
+ans - sed -n 10p /etc/passwd
+
+2) write the command to find length of 10 th line in a /etc/passwd file ?
+ans -  cat /etc/passwd | awk "NR==10p"
+
+3) write the command to display the hrader from file ?
+ans - pr -d a.txt or sed -n '1p' file name 
+
+4) write the command to display the footer the file ?
+ans - sed -n '$p' file name 
+
+5) write the command to get 5 th world of each line from /etc/passwd file ? 
+ans - cut -d: -f5 /etc/passwd this shoen in stage actually command is $ cut -c5 /etc/passwd
+
+6) write the command to get 5th  world of 2nd  line from /etc/passwd file ? 
+ans - cut -d: -f5 | sed -n 2p ---- $ sed -n '2p' /etc/passwd | cut -c5 
+
+7) write the command to check if last command was successfully execute or not ?
+ans - echo $?
+
+8) write the command to display all ditectory present in current working location?
+ans - ls -l | grep '^d'
+
+9)  write the command to display all files  present in current working location? 
+ans - ls -l | grep '^-'
+
+10) write the command to redirect output of date command to multiple file ?
+ans - date > file name  
+ 
+11) write the command to dislapy the calender for the month march in the year 1985 ?
+ans - cal march 1985
+
+12) write the command to find the total number of lines in the file ?
+ans - wc -l file name 
+
+13 write the command  to merge the content of f1.txt,f2.txt and f3.txt files into f4.txt ?
+ans- cat f1.txt f2.txt f3.txt > f4.txt  
+
+14) write the command to print the lines which end with the word "end" ?
+ans- grep -w "end$" a.txt
+
+15) write the command to select only those lines containing "july" as a whole word ?
+ans - grep -w "^july" a.txt
+
+16)write a command to display the process that were run by your user name ?
+ans - ps -ef or ps -u
+
+17) write a unix command to display the lines in a file that do not contain the word "ram" ?
+ans - grep -v "^ram" a.txt
+
+18) write a command to print the lines that start with te word "start" ?
+ans - grep -w "^start" a.txt
+
+19) write the command to print the line no before each line ?
+ans - cat -n a.txt
+
+20) commamd to shown todays date in yyyymmdd in that format --> $ date +%F
+21) how will you list all the directories only using echo command ?
+ans - echo */
+
+22) count the number of files and directory present in current working directpry for example
+ in current working directory if there are 4 directory and 5 file than your out sould be 9
+ans - ls | wc -l
+
+22) count the no. of files in prasent working directory whose name start with 'A' ?
+ans - find -typr f -name 'A*' | wc -l
+
+23) count the no. of files in current worhing directory whose .txt extention 
+ans - find . -type f -name '*.txt' | wc -l
+
+24) count only dirictories present in CWD --> $ls -l | grep '^d' 
+25) count only files  present in CWD path  --> $ls -l | grep '^-' 
+25) count the no of dirictory prasent in the CWD path ?--> $ ls -l| grep '^d' | wc -l
+26) count the no of files of directory who belongs to root user --> $sudo find /root | wc -l
+27) display only those file name whose size is greter than 40 kb --> $find. -type f -size +40k
+28) display only those file name whose size is less than 60 kb --> $find. -type f -size -60k
+29) display first sixth month calendar of 2018 --> cal 2018 | head -19
+30) display last  sixth month calendar of 2018 --> cal 2018 | tail -19
+31) count the zip files prasent in current working directory --> $ls -l | grep -c ".gz"
+32) count the tar files prasent in the current working directory -->  ls -l | grep -c ".tar" or find . -type f -name "*.tar" |wc -l
+33) count the .txt files prasent the current working directory --> $ find . -type f -name "*.txt"
+34) change file name to upper case for those files which are prasent in the current working directory
+ans - $ sort file name > file name 
+34) count the number of files prasent in the /bin directory
+ans -ls -l /bin | grep -c "^l"
+============================================================================================================
+ crete a file named studentinfo.txt & the following information in that file 
+
+ name    mark   city
+ Naina   60      Pune
+ Babita  90      Pune
+ Abanti  45      Mumbai
+ Punit   89      Nashik
+ Brian   35      Nashik
+ Trisha  63      Channai
+
+then write command for below requrement 
+
+1) count student who belongs to pune city --> cat file name | grep -w "pune" | wc -l 
+2) display those student info whose belong to nashik city -> cat file name | grep -w  "nashik"   
+3) display student names whose belong to mumbai city --> cat file name | grep " mumbai"
+4)  display student infor whose marks are greter than or equal to 60-->  
+5) display student names whose marks are less than or equal to 50 -->
+6) display student details where city name start with m-->grep -c 'm'file name 
+7) display student names whose does not belong to pune city-->cat a1.txt | grep -v "pune"
+==========================================================================================================
+                                    part 2
+==========================================================================================================
+1) which command is used to display todays date is IST format --> date
+2)  which command is used to display todays date is utc  format --> date -u
+3) which command is used to know how time taken by particular command to execute--> stat file name 
+4) which command is used to known the current working directory path ? --> pwd
+5) how meny ways we can create a file --> by using touch command ,data is appendig ,cat > command ,cp command 
+6) -->less command 
+7)  extension of zip file is .gz  no 
+8) copy the file /etc/passwd/to movir directory --> cp -r /etc/passwed movies
+9) --> use of tar comand is create archive files
+10) search ftp.games /root words in /etc/passwd fileb-->  grep  -i -e 'ftp' -e ' games' -e ' root' a1.txt
+11)  write a command to create haed link --> ln file name  backup file name 
+12) write a command to create a soft link --> ln -s  ffile name soft link filename 
+13) how to known  system is 32 or 64 bit --> lscpu or uname -i	
+14)  search all files in current working directory who has permission is 564
+ans - find . -type f -perm 564
+15)  search all files & directory whose size is 50 mb 
+ans - for directory $ find . -type d -size 50m
+      for files  $ find . - type f -size 50m	
